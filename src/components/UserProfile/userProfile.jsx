@@ -15,9 +15,7 @@ const UserProfile = () => {
     const tab = useRef(null);
 
 
-    const handleTab = (left, id) => {
-        setshowTab(left);
-
+    const handleTab = (id) => {
         for(let i = 1; i <= tab.current.children.length ; i++){
             tab.current.children[i-1].classList.remove("block");
         }
@@ -122,19 +120,22 @@ const UserProfile = () => {
             <div className={`absolute top-0 left-[${showTab}px] h-[2px] bg-black w-1/3 transition-all`}></div>
 
             <div onClick={ () => {
-                handleTab(0, 1);
+                setshowTab(0);
+                handleTab(1);
             } } className='flex justify-center items-center flex-col p-2'>
                 <CgMenuGridR/>
             </div>
 
             <div onClick={ () => {
-                handleTab( 120, 2 );
+                setshowTab(120);
+                handleTab( 2 );
             } } className='flex justify-center items-center flex-col p-2'>
                 <BsBookmark/>
             </div>  
 
             <div  onClick={ () => {
-                handleTab( 360, 3 );
+                setshowTab(240);
+                handleTab( 3 );
             } } className='flex justify-center items-center flex-col p-2'>
                 <MdPermContactCalendar/>
             </div>
