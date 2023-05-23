@@ -22,7 +22,7 @@ const NavBar = () => {
             <div className='absolute -top-1 -right-1 z-10 text-sm text-white font-semibold flex justify-center items-center h-4 aspect-square rounded-full bg-red-500'>3</div>
           </div>
         </Link>
-        <Link to ="/profile">
+        <Link to ="/userProfile">
           <CgProfile className='hover:scale-105'/>
         </Link>
       </div>
