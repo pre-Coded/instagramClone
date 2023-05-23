@@ -49,43 +49,33 @@ const Messages = () => {
             </div>
 
             <ul className='list-none flex flex-col'>
-                <li className='p-2 flex justify-start items-center object-contain w-full h-20'>
+                <li className='p-2 flex justify-start items-center object-contain w-full h-20 relative'>
                     <img src={Pic1} alt="" className='rounded-full h-full aspect-square'/>
                     <div className='text-xs flex flex-col p-2'>
                         <span className='font-[500]'>acquaintance17</span>
                         <span className='text-gray-400'>Sent a Reel video 4w</span>
                     </div>
-                    <div className='ml-24 text-3xl'>
+                    <div className='absolute right-4 text-3xl'>
                         <AiOutlineCamera/>
                     </div>
                 </li>
-                <li className='p-2 flex justify-start items-center object-contain w-full h-20'>
+                <li className='p-2 flex justify-start items-center object-contain w-full h-20 relative'>
                     <img src={Pic1} alt="" className='rounded-full h-full aspect-square'/>
                     <div className='text-xs flex flex-col p-2'>
                         <span className='font-[500]'>acquaintance17</span>
                         <span className='text-gray-400'>Sent a Reel video 4w</span>
                     </div>
-                    <div className='ml-24 text-3xl'>
+                    <div className='absolute right-4 text-3xl'>
                         <AiOutlineCamera/>
                     </div>
                 </li>
-                <li className='p-2 flex justify-start items-center object-contain w-full h-20'>
+                <li className='p-2 flex justify-start items-center object-contain w-full h-20 relative'>
                     <img src={Pic1} alt="" className='rounded-full h-full aspect-square'/>
                     <div className='text-xs flex flex-col p-2'>
                         <span className='font-[500]'>acquaintance17</span>
                         <span className='text-gray-400'>Sent a Reel video 4w</span>
                     </div>
-                    <div className='ml-24 text-3xl'>
-                        <AiOutlineCamera/>
-                    </div>
-                </li>
-                <li className='p-2 flex justify-start items-center object-contain w-full h-20'>
-                    <img src={Pic1} alt="" className='rounded-full h-full aspect-square'/>
-                    <div className='text-xs flex flex-col p-2'>
-                        <span className='font-[500]'>acquaintance17</span>
-                        <span className='text-gray-400'>Sent a Reel video 4w</span>
-                    </div>
-                    <div className='ml-24 text-3xl'>
+                    <div className='absolute right-4 text-3xl'>
                         <AiOutlineCamera/>
                     </div>
                 </li>
