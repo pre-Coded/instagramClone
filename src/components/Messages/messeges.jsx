@@ -1,7 +1,7 @@
 import React from 'react'
 import { GrPrevious, GrAdd } from 'react-icons/gr'
 import { AiOutlineDown, AiOutlineVideoCameraAdd, AiOutlineCamera } from 'react-icons/ai'
-import Pic1 from '../../assets/images/photo_2023-05-15 21.53.58.jpeg'
+import Pic1 from '../../assets/images/Pic1.jpeg'
 import { BsSearch } from 'react-icons/bs'
 import {IoMdAdd} from 'react-icons/io'
 

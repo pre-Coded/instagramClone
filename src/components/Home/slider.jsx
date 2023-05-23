@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import Pic1 from '../../assets/images/photo_2023-05-15 21.53.58.jpeg'
 import { GrNext, GrPrevious } from 'react-icons/gr';
+
+import {profiles} from '../../content/data.js'
 
 const Slider = () => {
   const carausol = useRef();
@@ -16,6 +17,15 @@ const Slider = () => {
     if (carausol.current.scrollLeft < 150 && show) setShow(false);
   };
 
+  const profilesStory = profiles.map((profile) =>{
+      return <div className='relative'>
+        <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
+        before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center relative'>
+          <img src={profile.profilePhoto} alt="" className='rounded-full h-full aspect-square object-cover border-2'/>
+        </div>
+    </div>
+  })
+
   return (
     <div className='relative flex justify-center items-center'>
       <div
@@ -23,75 +33,7 @@ const Slider = () => {
         className='scroll-smooth h-24 w-full flex items-center justify-start p-2 overflow-x-hidden space-x-2'
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[5rem] before:aspect-square
-          before:rounded-full before:-z-10 before:absolute h-[4.8rem] aspect-square rounded-full object-contain grid place-items-center'>
-            <img src={Pic1} alt="" className='rounded-full border-2'/>
-          </div>
-        </div>
-        
-        
-
+        {profilesStory}
       </div>
 
       <button

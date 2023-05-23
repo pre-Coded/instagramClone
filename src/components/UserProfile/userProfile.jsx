@@ -8,7 +8,8 @@ import {CgMenuGridR} from 'react-icons/cg'
 import {BsBookmark} from 'react-icons/bs'
 import {MdPermContactCalendar} from 'react-icons/md'
 import { useState, useRef } from 'react'
-import Pic1 from "../../assets/images/photo_2023-05-15 21.53.58.jpeg"
+
+import { profiles } from '../../content/data'
 
 const UserProfile = () => {
     const [showTab, setshowTab] = useState(0);
@@ -122,21 +123,21 @@ const UserProfile = () => {
             <div onClick={ () => {
                 setshowTab(0);
                 handleTab(1);
-            } } className='flex justify-center items-center flex-col p-2'>
+            } } className='flex justify-center items-center flex-col p-2 cursor-pointer'>
                 <CgMenuGridR/>
             </div>
 
             <div onClick={ () => {
                 setshowTab(120);
                 handleTab( 2 );
-            } } className='flex justify-center items-center flex-col p-2'>
+            } } className='flex justify-center items-center flex-col p-2 cursor-pointer'>
                 <BsBookmark/>
             </div>  
 
             <div  onClick={ () => {
                 setshowTab(240);
                 handleTab( 3 );
-            } } className='flex justify-center items-center flex-col p-2'>
+            } } className='flex justify-center items-center flex-col p-2 cursor-pointer'>
                 <MdPermContactCalendar/>
             </div>
 
@@ -144,53 +145,25 @@ const UserProfile = () => {
 
         <div ref = {tab} className=''>
             <div className='block'>
-                <div className='grid grid-cols-3 gap-[2px]'>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
+            <div className='grid grid-cols-3 gap-[2px]'>
+                    {
+                        profiles[0].images.map( (images) =>{
+                            return (
+                                <img src={images} alt="" srcset="" className={`w-full aspect-square object-cover border-none cursor-pointer`}/>
+                            )
+                        })
+                    }
                 </div>
             </div>
             <div className='hidden'>
                 <div className='grid grid-cols-3 gap-[2px]'>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
-                    <div className='object-contain'>
-                        <img src={Pic1} alt="" />
-                    </div>
+                    {
+                        profiles.map((profile) =>{
+                            return (
+                                <img src={profile.bookmarks ? profile.profilePhoto : ""} alt="" srcset="" className={`${profile.bookmarks ? "block" : "hidden"} w-full aspect-square object-cover border-none cursor-pointer`}/>
+                            )
+                        })
+                    }
                 </div>
             </div>
             <div className='hidden'>

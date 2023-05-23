@@ -1,5 +1,5 @@
 import React from 'react'
-import Pic1 from "../assets/images/photo_2023-05-15 21.53.58.jpeg"
+import Pic1 from "../assets/images/Pic1.jpeg"
 
 const Circle = ({height}) => {
   return (
