@@ -3,7 +3,7 @@ import {FiSettings} from 'react-icons/fi'
 import {AiOutlineDown} from 'react-icons/ai'
 import {MdManageAccounts} from 'react-icons/md'
 import Circle from '../../Utility/Circle'
-import {GrAdd} from 'react-icons/gr'
+import {IoMdAdd} from 'react-icons/io'
 import {CgMenuGridR} from 'react-icons/cg'
 import {BsBookmark} from 'react-icons/bs'
 import {MdPermContactCalendar} from 'react-icons/md'
@@ -14,6 +14,9 @@ import { profiles } from '../../content/data'
 const UserProfile = () => {
     const [showTab, setshowTab] = useState(0);
     const tab = useRef(null);
+
+    const [colP, unSetColP] = useState("grid grid-cols-3 gap-[2px]");
+    const [colB, unSetColB] = useState("grid grid-cols-3 gap-[2px]");
 
 
     const handleTab = (id) => {
@@ -72,30 +75,8 @@ const UserProfile = () => {
         <div className='flex space-x-2 relative p-2 border-b-[1px]'>
 
             <div className='relative'>
-            <div className={`before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[3.5rem] before:aspect-square
-            before:rounded-full before:-z-10 before:absolute h-[3.2rem] aspect-square rounded-full object-contain grid      place-items-center`}>
-                <img src="" alt="" className='rounded-full border-2'/>
-            </div>
-            </div>
-
-            <div className='relative'>
-            <div className={`before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[3.5rem] before:aspect-square
-            before:rounded-full before:-z-10 before:absolute h-[3.2rem] aspect-square rounded-full object-contain grid      place-items-center`}>
-                <img src="" alt="" className='rounded-full border-2'/>
-            </div>
-            </div>
-
-            <div className='relative'>
-            <div className={`before:block before:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 before:h-[3.5rem] before:aspect-square
-            before:rounded-full before:-z-10 before:absolute h-[3.2rem] aspect-square rounded-full object-contain grid      place-items-center`}>
-                <img src="" alt="" className='rounded-full border-2'/>
-            </div>
-            </div>
-
-            <div className='relative'>
-            <div className={`before:block before:bg-black to-pink-500 before:h-[3.5rem] before:aspect-square
-            before:rounded-full before:-z-10 before:absolute h-[3.2rem] aspect-square rounded-full object-contain grid      place-items-center text-white text-xl`}>
-                <h1 className='text-white'><GrAdd/></h1>
+            <div className={`bg-black border-2 border-gray-400 h-[4rem] aspect-square rounded-full object-contain grid      place-items-center`}>
+                <div className='text-white font-bold  text-3xl'> <IoMdAdd/> </div>
             </div>
             </div>
 
@@ -145,22 +126,36 @@ const UserProfile = () => {
 
         <div ref = {tab} className=''>
             <div className='block'>
-            <div className='grid grid-cols-3 gap-[2px]'>
+            <div className={`${colP}`}>
                     {
                         profiles[0].images.map( (images) =>{
                             return (
-                                <img src={images} alt="" srcset="" className={`w-full aspect-square object-cover border-none cursor-pointer`}/>
+                                <img src={images} alt="" srcset="" className={`aspect-square object-cover border-none cursor-pointer`}
+                                onClick = {()=>{
+                                    if(colP === "grid grid-cols-3 gap-[2px]"){
+                                        unSetColP("grid grid-row gap-[2px]");
+                                    }else {
+                                        unSetColP("grid grid-cols-3 gap-[2px]");
+                                    }
+                                }}/>
                             )
                         })
                     }
                 </div>
             </div>
             <div className='hidden'>
-                <div className='grid grid-cols-3 gap-[2px]'>
+                <div className={`${colB}`}>
                     {
                         profiles.map((profile) =>{
                             return (
-                                <img src={profile.bookmarks ? profile.profilePhoto : ""} alt="" srcset="" className={`${profile.bookmarks ? "block" : "hidden"} w-full aspect-square object-cover border-none cursor-pointer`}/>
+                                <img src={profile.bookmarks ? profile.profilePhoto : ""} alt="" srcset="" className={`${profile.bookmarks ? "block" : "hidden"} w-full aspect-square object-cover border-none cursor-pointer`}
+                                onClick = {()=>{
+                                    if(colB === "grid grid-cols-3 gap-[2px]"){
+                                        unSetColB("grid grid-row gap-[2px]");
+                                    }else {
+                                        unSetColB("grid grid-cols-3 gap-[2px]");
+                                    }
+                                }}/>
                             )
                         })
                     }
